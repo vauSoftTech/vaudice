@@ -36,7 +36,11 @@ class DiceApp(Frame):
 
         def create_widgets(container):
             container.dice_1 = diceframe.DiceFrame("Dice One")
+            container.dice_1.hide_roll_btn()
+            container.dice_1.roll()
             container.dice_2 = diceframe.DiceFrame("Dice Two")
+            container.dice_2.hide_roll_btn()
+            container.dice_2.roll()
             return
 
         def widget_placement(place_on):

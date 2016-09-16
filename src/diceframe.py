@@ -25,6 +25,7 @@
 """
 from tkinter import *
 from tkinter.ttk import *
+# from tkinter.tix import *
 import dice
 
 
@@ -66,7 +67,8 @@ class DiceFrame(Frame):
                              sticky=(W, E))
         self.lbl_result.configure(anchor="center")
 
-        self.roll_button = Button(self, text="Roll", command=self.roll)
+        self.roll_button = Button(self, text="Roll",
+                                  underline=0, command=self.roll)
         self.roll_button.grid(row=5, column=0, padx=5, pady=(0, 10),
                               sticky=(W, E))
 
@@ -111,6 +113,15 @@ class DiceFrame(Frame):
 
     def hide_result_text(self):
         self.lbl_result.grid_forget()
+        return
+
+    def show_roll_btn(self):
+        self.roll_button.grid(row=5, column=0, padx=5, pady=(0, 10),
+                              sticky=(W, E))
+        return
+
+    def hide_roll_btn(self):
+        self.roll_button.grid_forget()
         return
 
     def do_popup(self, event):
